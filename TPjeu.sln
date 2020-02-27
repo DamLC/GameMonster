@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameMonster", "GameMonster\GameMonster.csproj", "{F982F0C0-161C-427F-A273-14A39B576C22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F982F0C0-161C-427F-A273-14A39B576C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F982F0C0-161C-427F-A273-14A39B576C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F982F0C0-161C-427F-A273-14A39B576C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F982F0C0-161C-427F-A273-14A39B576C22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

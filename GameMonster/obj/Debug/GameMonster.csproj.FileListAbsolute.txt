@@ -1,0 +1,5 @@
+C:\Users\damien.loconte\RiderProjects\TPjeu\GameMonster\bin\Debug\GameMonster.exe
+C:\Users\damien.loconte\RiderProjects\TPjeu\GameMonster\bin\Debug\GameMonster.pdb
+C:\Users\damien.loconte\RiderProjects\TPjeu\GameMonster\obj\Debug\GameMonster.csprojAssemblyReference.cache
+C:\Users\damien.loconte\RiderProjects\TPjeu\GameMonster\obj\Debug\GameMonster.exe
+C:\Users\damien.loconte\RiderProjects\TPjeu\GameMonster\obj\Debug\GameMonster.pdb

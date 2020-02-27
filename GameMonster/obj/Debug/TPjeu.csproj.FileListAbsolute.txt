@@ -1,0 +1,5 @@
+C:\Users\damien.loconte\RiderProjects\TPjeu\TPjeu\bin\Debug\TPjeu.exe
+C:\Users\damien.loconte\RiderProjects\TPjeu\TPjeu\bin\Debug\TPjeu.pdb
+C:\Users\damien.loconte\RiderProjects\TPjeu\TPjeu\obj\Debug\TPjeu.csprojAssemblyReference.cache
+C:\Users\damien.loconte\RiderProjects\TPjeu\TPjeu\obj\Debug\TPjeu.exe
+C:\Users\damien.loconte\RiderProjects\TPjeu\TPjeu\obj\Debug\TPjeu.pdb

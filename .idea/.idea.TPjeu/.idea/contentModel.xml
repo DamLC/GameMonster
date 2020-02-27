@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\damien.loconte\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\damien.loconte\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\damien.loconte\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\damien.loconte\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_TPjeu.1905281901.00" t="ExcludeRecursive" />
+    <e p="C:\Users\damien.loconte\RiderProjects\TPjeu" t="IncludeFlat">
+      <e p="GameMonster" t="IncludeRecursive">
+        <e p="Accessoires" t="Include">
+          <e p="De.cs" t="Include" />
+          <e p="PotionVie.cs" t="Include" />
+        </e>
+        <e p="Armes" t="Include">
+          <e p="Epee.cs" t="Include" />
+          <e p="EpeeBoss.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="GameMonster.csproj" t="IncludeRecursive" />
+        <e p="Monstres" t="Include">
+          <e p="FabriqueMonstre.cs" t="Include" />
+          <e p="MonstreDifficile.cs" t="Include" />
+          <e p="MonstreFacile.cs" t="Include" />
+        </e>
+        <e p="Niveaux" t="Include">
+          <e p="Level1.cs" t="Include" />
+          <e p="LevelBoss.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Personnages" t="Include">
+          <e p="Boss.cs" t="Include" />
+          <e p="CreationPersonnages.cs" t="Include" />
+          <e p="Joueur.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Protections" t="Include">
+          <e p="Armure.cs" t="Include" />
+        </e>
+        <e p="Textes" t="Include">
+          <e p="DialogueBoss.cs" t="Include" />
+          <e p="DialogueJoueur.cs" t="Include" />
+          <e p="Narration.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="TPjeu.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
