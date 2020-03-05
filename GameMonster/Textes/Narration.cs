@@ -48,7 +48,12 @@ namespace TPjeu
         
         public static void deuxiemeChance()
         {
-            Console.WriteLine("Grace a l'amulette du couard de tonton Norbert vous ressussitez au 1er étage et un boss vous fait face \n" );
+            Console.WriteLine("Grace a l'amulette du couard de tonton Norbert vous ressussitez au 1er étage  \n" );
+        }
+
+        public static void boss()
+        {
+            Console.WriteLine("Un boss térrifiant vous fait face....");
         }
         public static void enter()
         {

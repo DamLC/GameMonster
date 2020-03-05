@@ -9,6 +9,7 @@ namespace TPjeu
     {
         public static void lastStage()
         {
+            Narration.boss();
             Narration.creationJoueur();
             Joueur hero = new Joueur(CreationPersonnages.creePV(),CreationPersonnages.creePA(), CreationPersonnages.creeDegats(), 50 );
             Narration.creationBoss();

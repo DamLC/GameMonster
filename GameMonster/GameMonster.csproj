@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Textes\DialogueBoss.cs" />
     <Compile Include="Textes\DialogueJoueur.cs" />
+    <Compile Include="Textes\Menu.cs" />
     <Compile Include="Textes\Narration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

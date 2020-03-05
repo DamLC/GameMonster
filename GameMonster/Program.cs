@@ -11,9 +11,7 @@ namespace TPjeu
     {
         public static void Main(string[] args)
         {
-            Level1.stage1();
-
-            Narration.choix();
+            Menu.choixMode();
         }
     }
 }

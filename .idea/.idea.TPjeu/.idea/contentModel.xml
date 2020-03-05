@@ -42,6 +42,7 @@
         <e p="Textes" t="Include">
           <e p="DialogueBoss.cs" t="Include" />
           <e p="DialogueJoueur.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
           <e p="Narration.cs" t="Include" />
         </e>
       </e>
