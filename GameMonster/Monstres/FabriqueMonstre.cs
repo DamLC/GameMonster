@@ -16,7 +16,7 @@ namespace TPjeu.Monstres
             {
                 return new MonstreFacile();
             }
-            return new MonstreFacile();
+            return new MonstreDifficile();
         }
     }
 }
