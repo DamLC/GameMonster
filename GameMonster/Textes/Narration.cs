@@ -4,10 +4,42 @@ namespace TPjeu
 {
     public class Narration
     {
+        public static void nom()
+        {
+            string nom;
+            
+            Console.WriteLine("Quelle est votre nom héro ?");
+            nom = Console.ReadLine();
+            Console.WriteLine(value: "Création en cours ........\n" +
+                                     "...........................\n" +
+                                     "Ok ! Le joueur  "+ nom + " a été crée\n" +
+                                     "Bonne chance, tu vas en avoir besoin\n");
+        }
+        public static void creationGuerrier()
+        {
+            Console.WriteLine("*********************************\n");
+            Console.WriteLine("        Création d'un guerrier\n");
+            Console.WriteLine("**********************************\n");
+        }
+        
+        public static void creationMage()
+        {
+            Console.WriteLine("*********************************\n");
+            Console.WriteLine("        Création d'un Mage\n");
+            Console.WriteLine("**********************************\n");
+        }
+        
+        public static void creationArcher()
+        {
+            Console.WriteLine("*********************************\n");
+            Console.WriteLine("        Création d'un archer\n");
+            Console.WriteLine("**********************************\n");
+        }
+        
         public static void creationJoueur()
         {
             Console.WriteLine("*********************************\n");
-            Console.WriteLine("        Création du héro\n");
+            Console.WriteLine("        Création d'un mec lambda\n");
             Console.WriteLine("**********************************\n");
         }
         
@@ -60,37 +92,11 @@ namespace TPjeu
             Console.WriteLine("appuyer sur 'entrer' pour continuer");
             Console.ReadLine();
         }
-        public static void choix()
-        {
-            string choix ="";
-            
-            while (choix != "lancer" || choix != "ciao")
-            {
-                Console.WriteLine("Saisissez 'lancer' pour lancer le dé de dégats \n " +
-                                  "ou 'ciao' pour prendre la fuite   ");
-                choix = Console.ReadLine();
-
-                if (choix == "lancer")
-                {
-                    LevelBoss.lastStage();
-                    break;
-                }
-
-                if (choix == "ciao")
-                {
-                    fuite();
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Tu as tapper "+ choix +"\n tu sais lire on a dit 'lancer' ou 'ciao'\n");
-                }
-            }
-        }
+       
             
         public static void attaque()
         {
-            Console.WriteLine(" 'entrer' lancer le dé de dégats  ");
+            Console.WriteLine(" Appuyer sur 'entrer' pour lancer le dé de dégats  ");
             Console.ReadLine();
         }
 
@@ -115,7 +121,39 @@ namespace TPjeu
             Console.WriteLine("Notre hero s'envole pour le paradis des noobs");
         }
 
+        public static void recharge()
+        {
+            Console.WriteLine("Votre compêtence est rechargée " +
+                              "lancer le dé de compêtence");
+        }
+        
+        public static void competenceArcher()
+        {
+            Console.WriteLine("vous activez votre compêtence pluie de flêches");
+            Console.WriteLine("vous bandez votre arc vers le ciel et tirez..." +
+                              "Soudain une vingtaine de flêche tombe tel une pluie sur vos enemis. ");
+        }
 
+        public static void competenceMage()
+        {
+            Console.WriteLine("vous activez votre compêtence embrasement");
+            Console.WriteLine("vous frapper le sol de votre baton..." +
+                              "Soudain il se met a briller et un petit cercle de feu se forme au sol autour de votre baton " +
+                              "qui s'élargie de plus en plus jusqu'a atteindre les parois de la salle en brulant tous les enemis au passage. ");
+        }
+        
+        public static void competenceGuerrier()
+        {
+            Console.WriteLine("vous activez votre compêtence roue pourfendeuse ");
+            Console.WriteLine("vous courrez jusqu au millieu de la salle ...et y restez immobile" +
+                              "Soudain vous saisissez votre épée a deux main est commencer a tournoyer sur place," +
+                              "la vitesse est tel que vous projettez des lames de vents qui blesse tous les enemis alentour ");
+        }
+
+        public static void soins()
+        {
+            Console.WriteLine("Le boss utilise sont sort de soins +100 PV");
+        }
     }
     
 }
