@@ -34,7 +34,8 @@ namespace TPjeu.Protections
             }
             if(durabilité == 0 || durabilité <0)
             {
-                Console.WriteLine("BRING!! Votre armure est cassée");
+                Console.WriteLine("BRING!! Votre armure est cassée\n" +
+                                  "Ah le con ça a failli passer a travers ");
             }
         }
     }
