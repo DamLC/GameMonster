@@ -1,9 +1,9 @@
+
 	Ø GameMonster 
-	
 C'est un projet en C# mode console dans un genre jeu de plateau .
 
 		Ø Accessoires
-			Ø De : la classe De contient un attribut random , un constructeur qui instancie un objet "De" avec cet attribut random.Une fonction lancerDe(valeur) pour retourner un random entre 1 et cet valeur.
+			Ø De : la classe De contient un attribut random , un constructeur qui instancie un objet "De" avec cet attribut random Une fonction lancerDe(valeur) pour retourner un random entre 1 et cet valeur.
 			
 			Ø PotionVie : La classe contient un constructeur qui qui reçoit en paramètre un int qui correspond au nombre de point de vie que redonnera la potion au joueur.
 			
@@ -25,12 +25,11 @@ C'est un projet en C# mode console dans un genre jeu de plateau .
 			Ø CreationPersonnages : Cet classe contient les fonctions d'écoute saisi clavier nécessaire a la création du joueur et du boss.
 	
 		Ø Classes
-			Ø Archer :
+			Ø Archer : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type archer, et une fonction skill() qui avec un lancer de dé détermine si la compétence de l’archer est utilisée.
 			
-			Ø Mage :
+			Ø Mage : : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type mage, et une fonction skill() qui avec un lancer de dé détermine si la compétence du mage est utilisée
 			
-			Ø Guerrier :
-			
+			Ø Guerrier : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type guerrier, et une fonction skill() qui avec un lancer de dé détermine si la compétence du guerrier est utilisée.
 			
 		Ø Monstres
 			Ø FabriqueMonstre : Cet classe contient une fonction creerMonstre() qui tire un random entre 0 et 2 pour déterminer la création d'un monstre facile ou difficile.
