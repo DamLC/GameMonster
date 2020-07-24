@@ -8,7 +8,8 @@ namespace TPjeu.Personnages
     public class Boss
     {
         private De de;
-        public  int pointVie;
+        public int pointVie;
+        public int sortSoins = 1;
         private EpeeBoss epee;
 
         public bool estVivant
@@ -41,10 +42,16 @@ namespace TPjeu.Personnages
 
             int degats = lancerDe(26);
 
-            if (pointVie <100)
+            if (pointVie == 150)
             {
                 Narration.changeArme();
                 degats = lancerDe(26) + epee.frappe;
+            }
+            if (pointVie < 50 && sortSoins == 1)
+            {
+                Narration.soins();
+                pointVie += 100;
+                sortSoins--;
             }
             
             Console.WriteLine("Il  reste "+ pointVie + " PV au boss");
