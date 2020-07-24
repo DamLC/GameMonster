@@ -1,5 +1,7 @@
 HELP.md
 
+.sln
+
 ### STS ###
 .apt_generated
 .classpath
@@ -9,12 +11,11 @@ HELP.md
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+### RIDER IDEA ###
 .idea
-*.iws
-*.iml
-*.ipr
-
+.git
+bin
+obj
 
 
 
