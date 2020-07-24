@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using TPjeu.Accessoire;
 using TPjeu.Armes;
+using TPjeu.Classe;
 using TPjeu.Monstres;
 using TPjeu.Protections;
 
@@ -10,10 +12,11 @@ namespace TPjeu.Personnages
     {
         private De de;
         public  int pointVie;
+        public int cptPopo =1;
         
-        private Armure corps;
-        private Epee arme;
-        private PotionVie popo;
+        protected Armure corps;
+        protected static Epee arme;
+        protected PotionVie popo;
        
         
 
@@ -37,7 +40,7 @@ namespace TPjeu.Personnages
             
         }
        
-        public Joueur( int pointVie, int plastron, int epee, int rouge)
+        public Joueur(  int pointVie, int plastron, int epee, int rouge)
         {
             de = new De();
             this.pointVie = pointVie;
@@ -45,9 +48,17 @@ namespace TPjeu.Personnages
             arme = new Epee(epee);
             popo = new PotionVie(rouge);
         }
-        
-        
-            
+        public Joueur(  int pointVie, int plastron, int epee)
+        {
+            de = new De();
+            this.pointVie = pointVie;
+            corps = new Armure(plastron);
+            arme = new Epee(epee);
+        }
+
+       
+
+
         public int lancerDe(int valeur )
         {
             return De.lancerDe(valeur);
@@ -66,29 +77,50 @@ namespace TPjeu.Personnages
 
         public void attaque(Boss boss)
         {
-            string rep = "";
-            int cptPopo = 1;
-            int degats = lancerDe(26) + arme.degatsCAC;
+            var rep = "";
+            var degats = 0;
 
-            Console.WriteLine("Il vous reste " + PointVie + " PV");
-
-            if (pointVie > 60 && PointVie < 100 && cptPopo != 0)
+            Console.WriteLine("Vous avez " + PointVie + " PV");
+            switch (LevelBoss.hero)
             {
-               
-                Console.WriteLine("Vous disposez d'une potion.\nSouhaitez vous la prendre. o/n");
+                case Archer _:
+                    Archer.skill();
+                    degats = Archer.degats;
+                    break;
+                case Guerrier _:
+                    Guerrier.skill();
+                    degats = Guerrier.degats;
+                    break;
+                case Mage _:
+                    Mage.skill();
+                    degats = Mage.degats;
+                    break;
+            }
+            if ( pointVie > 70 && pointVie < 100 )
+            {
+                switch (cptPopo)
+                {
+                    case 0:
+                        Console.WriteLine("Domage vous n'aviez q'une potion");
+                        break;
+                    case 1:
+                        Console.WriteLine("Vous disposez d'une potion.\nSouhaitez vous la prendre. o/n");
+                        break;
+                }
+
                 rep = Console.ReadLine();
                 if (rep == "o")
                 {
-                    cptPopo--;
                     soigner(pointVie);
-                    Console.WriteLine("Vous n'aviez qu'1 potion de soins \n");
+                    Console.WriteLine("Vous prenez une potion de PV \n");
+                    cptPopo--;
                 }
-                
-                DialogueJoueur.effetDegatsJoueur(degats);
-                Console.WriteLine("vous infigez au boss " + degats + " dégats d'épée\n");
-                boss.subitDegats(degats);
-                
             }
+            
+            Console.WriteLine("vous infigez au boss " + degats + " dégats d'arme\n");
+            DialogueJoueur.effetDegatsJoueur(degats);
+            boss.subitDegats(degats);
+            
         }
 
         public  int subirDegats(int degats)
