@@ -18,25 +18,26 @@
 > joueur définit par l’utilisateur.
 
 **Protections**
->- **Armure** : Cet classe contient un attribut durabilité et un booléen estEntiere qui passe à false quand la durabilité de l'armure tombe à zéro. Un constructeur qui prend la durabilité en paramètre, ainsi qu'une fonction encaisserDegats() qui encaisse les dégâts à la place du joueur tant qu'il reste de la durabilité a l'armure.
+> - **Armure** : Cet classe contient un attribut durabilité et un booléen estEntiere qui passe à false quand la durabilité de l'armure tombe à zéro. Un constructeur qui prend la durabilité en paramètre, ainsi qu'une fonction encaisserDegats() qui encaisse les dégâts à la place du joueur tant qu'il reste de la durabilité a l'armure.
 
 **Personnage** 
->- **Boss** : Cet classe contient un objet De, une fonction booléen estVivant qui passe à false quand les points de vie tombent à zéro, un constructeur qui reçoit des points de vie et une arme en paramètre. Il a une fonction lancerDe(valeur), une fonction attaque (Joueur joueur) qui une fois descendu a 100PV ajoute les dégâts de son arme au total du jet de dé lorsqu'il attaque le joueur, et bien sur une fonction subitDegat(int dégâts) qui soustrait les dégâts reçus à ses points de vie. Il possède également un sort de soins pour quand ses PV passent la barre de 50.
+> - **Boss** : Cet classe contient un objet De, une fonction booléen estVivant qui passe à false quand les points de vie tombent à zéro, un constructeur qui reçoit des points de vie et une arme en paramètre. Il a une fonction lancerDe(valeur), une fonction attaque (Joueur joueur) qui une fois descendu a 100PV ajoute les dégâts de son arme au total du jet de dé lorsqu'il attaque le joueur, et bien sur une fonction subitDegat(int dégâts) qui soustrait les dégâts reçus à ses points de vie. Il possède également un sort de soins pour quand ses PV passent la barre de 50.
 >
->- **Joueur** : Cet classe contient un constructeur qui crée un joueur avec une épée, une armure, une potion, des points de vie et un dé. Il possède une fonction lancerDe(valeur), il a 2 fonction d'attaque une pour les monstres et une pour le boss. Il a également 2 fonctions pour subir les dégâts, dans la deuxième qui sera utilisé contre le boss il peut activer un bouclier grâce à un booléen ou son armure pour encaisser les dégâts sinon il prendra lui-même les dégâts. Et une fonction pour utiliser la potion de soins.
+> - **Joueur** : Cet classe contient un constructeur qui crée un joueur avec une épée, une armure, une potion, des points de vie et un dé. Il possède une fonction lancerDe(valeur), il a 2 fonction d'attaque une pour les monstres et une pour le boss. Il a également 2 fonctions pour subir les dégâts, dans la deuxième qui sera utilisé contre le boss il peut activer un bouclier grâce à un booléen ou son armure pour encaisser les dégâts sinon il prendra lui-même les dégâts. Et une fonction pour utiliser la potion de soins.
 >
->- **CreationPersonnages** : Cet classe contient les fonctions d'écoute saisi clavier nécessaire à la création du joueur et du boss.
+> - **CreationCaracteristiquesPersonnages** : Cet classe contient les fonctions d'écoute saisi clavier nécessaire à la création du joueur et du boss.
+>
+> - **CreationPersonnage**: cette classe contient la fonction de création de notre joueur en lui choisissant une classe cette fois on lui choisit nous même les points de vie il >aura également des points d'armure, des points de dégât pour son arme est des potions de soins. Ensuite on passe à la création du boss qui a la différence du joueur n'a pas >d'armure.
 
 **Classes**
-> - **Archer** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type archer, et une
-> fonction skill() qui avec un lancer de dé détermine si la compétence
-> de l’archer est utilisée.
+> - **Archer** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type archer.
 > 
-> - **Mage** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type mage, et une fonction
-> skill() qui avec un lancer de dé détermine si la compétence du mage
-> est utilisée.
+> - **Mage** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type mage.
 > 
-> - **Guerrier** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type guerrier, et une fonction skill() qui avec un lancer de dé détermine si la compétence du guerrier est utilisée.
+> - **Guerrier** : Cet classe contient un constructeur hérité de la classe joueur permettant de créer un joueur de type guerrier.
+
+**Aptitudes**
+> - **Competences** : cette classe contient une fonction frappeDeCompetence() qui avec un lancer de dé va déterminer selon la classe du héros en jeu la compétence a utilisée.
 
 **Monstres**
 > - **FabriqueMonstre** : Cet classe contient une fonction creerMonstre() qui tire un random entre 0 et 2 pour déterminer la
@@ -62,13 +63,7 @@
 > on recommence tant que le joueur est vivant. Une fois mort on compte
 > le nombre de monstre tué et le nombre de point gagné.
 > 
-> - **LevelBoss** : La classe contient la fonction lastStage() on commence par la création de notre joueur en lui choisissant une classe
-> cette fois on défini nous même les points de vie il aura
-> également des points d'armure, des points de dégât pour son arme et
-> une potion de soin. Ensuite on passe à la création du boss a définir aussi, a la
-> différence du joueur n'a pas d'armure. Une fois nos combattant créé
-> ils vont s'affronter en lançant le dé chacun leur tour jusqu'à ce que
-> l’un des deux meurt.
+> - **LevelBoss** : La classe contient la fonction lastStage() commence par appeler nos fonction de création du joueur et du boss, ensuite  ils vont s'affronter en lançant le dé >chacun leur tour jusqu'à ce que l’un des deux meurt.
 
 **Textes**
 > - **DialogueBoss** : Cet classe contient tous les dialogues du boss en fonction de sa mort, de sa victoire ou du résultat du dé lors du   
@@ -80,6 +75,8 @@
 >  - **Menu** : Cet classe contient la fonction choixMode() qui permet au joueur de choisir son niveau    
 >  
 >  - **Narration** : Cet classe contient toute les fonctions de description de salle, de niveau, de déroulement de combat, etc.…
+>
+> - **Titre** : cette classe contient tous les intitulés de menu, création de personnages…
 
 **Program** 
 > Le programme principale contient la fonction main() qui exécutera le jeu.
