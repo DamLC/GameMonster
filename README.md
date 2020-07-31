@@ -54,7 +54,7 @@
 > l'attaque de base.
 
 **Niveaux**
-> - **Level1** : La classe contient la fonction stage1() qui crée un nouveau joueur avec un nombre de point de vie, et 2 variable int qui
+> - **NiveauEtage** : La classe contient la fonction stage1() qui crée un nouveau joueur avec un nombre de point de vie, et 2 variable int qui
 > serviront de compteur pour chaque monstre tué. Ensuite une boucle est
 > lancée tant que le joueur est vivant on crée un monstre, à l'intérieur
 > de cette boucle on en crée une autre tant que le joueur et le monstre
@@ -63,7 +63,7 @@
 > on recommence tant que le joueur est vivant. Une fois mort on compte
 > le nombre de monstre tué et le nombre de point gagné.
 > 
-> - **LevelBoss** : La classe contient la fonction lastStage() commence par appeler nos fonction de création du joueur et du boss, ensuite  ils vont s'affronter en lançant le dé >chacun leur tour jusqu'à ce que l’un des deux meurt.
+> - **NiveauBoss** : La classe contient la fonction lastStage() commence par appeler nos fonction de création du joueur et du boss, ensuite  ils vont s'affronter en lançant le dé >chacun leur tour jusqu'à ce que l’un des deux meurt.
 
 **Textes**
 > - **DialogueBoss** : Cet classe contient tous les dialogues du boss en fonction de sa mort, de sa victoire ou du résultat du dé lors du   
