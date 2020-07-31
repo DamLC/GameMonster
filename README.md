@@ -63,9 +63,9 @@
 > le nombre de monstre tué et le nombre de point gagné.
 > 
 > - **LevelBoss** : La classe contient la fonction lastStage() on commence par la création de notre joueur en lui choisissant une classe
-> cette fois on lui choisit nous même les points de vie il aura
-> également des points d'armure, des points de dégât pour son arme est
-> des potions de soins. Ensuite on passe à la création du boss qui a la
+> cette fois on défini nous même les points de vie il aura
+> également des points d'armure, des points de dégât pour son arme et
+> une potion de soin. Ensuite on passe à la création du boss a définir aussi, a la
 > différence du joueur n'a pas d'armure. Une fois nos combattant créé
 > ils vont s'affronter en lançant le dé chacun leur tour jusqu'à ce que
 > l’un des deux meurt.
