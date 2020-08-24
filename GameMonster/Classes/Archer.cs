@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Permissions;
 using TPjeu.Accessoire;
 using TPjeu.Personnages;
