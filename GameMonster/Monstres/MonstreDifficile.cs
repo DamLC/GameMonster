@@ -1,4 +1,5 @@
-﻿using TPjeu.Monstres;
+﻿using System;
+using TPjeu.Accessoire;
 using TPjeu.Personnages;
 
 namespace TPjeu.Monstres
@@ -6,15 +7,22 @@ namespace TPjeu.Monstres
     public class MonstreDifficile : MonstreFacile
     {
         private int degatsMagique = 5;
-        
-        public void sortMagique(Joueur joueur)
+
+       public override void attaque(Joueur joueur)
         {
-            int lancerJoueur = joueur.lancerDe(26);
-            if ( lancerJoueur< 6)
+            base.attaque(joueur);
+            joueur.subirDegats(sortMagique());
+        }
+        
+        public int sortMagique()
+        {
+            int lancerJoueur = De.lancerDe(26);
+            if ( lancerJoueur == 6)
             {
-                 joueur.subirDegats(lancerJoueur * degatsMagique);
-            }                            
+                return 0;
+            }            
+            Console.WriteLine("le mosntre difficile vous inflige "+  lancerJoueur * degatsMagique +" de degats magique");
+            return lancerJoueur * degatsMagique;                           
         }
     }
-   
 }

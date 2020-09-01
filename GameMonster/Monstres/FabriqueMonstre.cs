@@ -14,8 +14,12 @@ namespace TPjeu.Monstres
 
             if (nb == 0)
             {
+                Console.WriteLine("Un monstre facile vient d'être créé");
+                Narration.enter();
                 return new MonstreFacile();
             }
+            Console.WriteLine("Un monstre difficile vient d'être créé");
+            Narration.enter();
             return new MonstreDifficile();
         }
     }

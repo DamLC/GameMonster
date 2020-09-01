@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using TPjeu.Accessoire;
+using TPjeu.Apptitudes;
 using TPjeu.Armes;
-using TPjeu.Classe;
+using TPjeu.Classes;
 using TPjeu.Monstres;
 using TPjeu.Protections;
 
@@ -12,10 +12,10 @@ namespace TPjeu.Personnages
     {
         private De de;
         public  int pointVie;
-        public int cptPopo =1;
+        public int cptPopo = 1;
         
         protected Armure corps;
-        protected static Epee arme;
+        protected static Arme arme;
         protected PotionVie popo;
        
         
@@ -40,12 +40,12 @@ namespace TPjeu.Personnages
             
         }
        
-        public Joueur(  int pointVie, int plastron, int epee, int rouge)
+        public Joueur( int pointVie, int plastron, int epee, int rouge)
         {
             de = new De();
             this.pointVie = pointVie;
             corps = new Armure(plastron);
-            arme = new Epee(epee);
+            arme = new Arme(epee);
             popo = new PotionVie(rouge);
         }
         public Joueur(  int pointVie, int plastron, int epee)
@@ -53,7 +53,7 @@ namespace TPjeu.Personnages
             de = new De();
             this.pointVie = pointVie;
             corps = new Armure(plastron);
-            arme = new Epee(epee);
+            arme = new Arme(epee);
         }
 
        
@@ -69,6 +69,9 @@ namespace TPjeu.Personnages
         {
             int lancerJoueur = lancerDe(26);
             int LancerMonstre =  monstre.lancerDe(26);
+            
+            Console.WriteLine("Vous avez " + PointVie + " PV");
+
             if (lancerJoueur >= LancerMonstre)
             {
                 monstre.subitDegats();
@@ -77,25 +80,30 @@ namespace TPjeu.Personnages
 
         public void attaque(Boss boss)
         {
-            var rep = "";
             var degats = 0;
-
+            int deCompetence = lancerDe(10);
+            
+            potionDeSoins();
             Console.WriteLine("Vous avez " + PointVie + " PV");
-            switch (LevelBoss.hero)
+
+            if (deCompetence < 5)
             {
-                case Archer _:
-                    Archer.skill();
-                    degats = Archer.degats;
-                    break;
-                case Guerrier _:
-                    Guerrier.skill();
-                    degats = Guerrier.degats;
-                    break;
-                case Mage _:
-                    Mage.skill();
-                    degats = Mage.degats;
-                    break;
+               degats = Competences.frappeDeCompetence();
             }
+            else
+            {
+                  degats = lancerDe(26) + arme.frappe;
+            }
+            Console.WriteLine("vous infigez au boss " + degats + " dégats d'arme\n");
+            DialogueJoueur.effetDegatsJoueur(degats);
+            boss.subitDegats(degats);
+            
+        }
+
+        public void potionDeSoins()
+        {
+            var rep = "";
+
             if ( pointVie > 70 && pointVie < 100 )
             {
                 switch (cptPopo)
@@ -104,6 +112,7 @@ namespace TPjeu.Personnages
                         Console.WriteLine("Domage vous n'aviez q'une potion");
                         break;
                     case 1:
+                        Console.WriteLine("Vous avez " + PointVie + " PV");
                         Console.WriteLine("Vous disposez d'une potion.\nSouhaitez vous la prendre. o/n");
                         break;
                 }
@@ -116,13 +125,7 @@ namespace TPjeu.Personnages
                     cptPopo--;
                 }
             }
-            
-            Console.WriteLine("vous infigez au boss " + degats + " dégats d'arme\n");
-            DialogueJoueur.effetDegatsJoueur(degats);
-            boss.subitDegats(degats);
-            
         }
-
         public  int subirDegats(int degats)
         {
             if (bouclier(degats) == true)
@@ -135,17 +138,17 @@ namespace TPjeu.Personnages
                 return pointVie -= degats;
             }
         }
-
-        public  int subitDegats(int degats)
+        public int subitDegats(int degats)
         {
             if (bouclier(degats) == true)
             {
                 DialogueJoueur.esquive();
                 return pointVie;
-            } 
-            if(Armure.estEntiere == true )
+            }
+
+            if (Armure.estEntiere == true)
             {
-                corps.encaisserDegats(degats, corps); 
+                corps.encaisserDegats(degats, corps);
                 return pointVie;
             }
             else
@@ -153,9 +156,6 @@ namespace TPjeu.Personnages
                 return pointVie -= degats;
             }
         }
-
-       
-
         public  bool bouclier(int degats)
         {
             int score = lancerDe(6);
@@ -169,7 +169,6 @@ namespace TPjeu.Personnages
                 return false;
             }
         }
-            
         public static void levelUp( int xp)
         {
             if (xp < 50)

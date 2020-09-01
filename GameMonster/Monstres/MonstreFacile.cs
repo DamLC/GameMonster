@@ -1,4 +1,5 @@
-﻿using TPjeu.Accessoire;
+﻿using System;
+using TPjeu.Accessoire;
 using TPjeu.Personnages;
 
 namespace TPjeu.Monstres
@@ -20,19 +21,21 @@ namespace TPjeu.Monstres
             return De.lancerDe(valeur);
         }
         
-        public void attaque(Joueur joueur)
+        public virtual void attaque(Joueur joueur)
         {
             int lancerJoueur = joueur.lancerDe(26);
             int LancerMonstre =  lancerDe(26);
             if (lancerJoueur < LancerMonstre)
             {
                 joueur.subirDegats(degats);
+                Console.WriteLine("le mosntre vous inflige "+ LancerMonstre +" de degats");
             }
         }
 
         public void  subitDegats()
         {
             estVivant = false;
+            Console.WriteLine(" vous avez vaincu le monstre");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TPjeu.Personnages
         private De de;
         public int pointVie;
         public int sortSoins = 1;
-        private EpeeBoss epee;
+        private Arme epee;
 
         public bool estVivant
         {
@@ -29,7 +29,7 @@ namespace TPjeu.Personnages
         {
             de = new De();
             this.pointVie = pointVie;
-             epee = new EpeeBoss(espadon); 
+             epee = new Arme(espadon); 
         }
 
         public int lancerDe( int valeur)
@@ -58,15 +58,11 @@ namespace TPjeu.Personnages
             DialogueBoss.effetDegatsBoss(degats);
             Console.WriteLine("Le boss vous infige "+degats+" dégats\n");
             joueur.subitDegats(degats);
-            
-           
-            
         }
 
         public int subitDegats(int degats)
         {
-            
-                return pointVie -= degats;
+            return pointVie -= degats;
             
         }
 
