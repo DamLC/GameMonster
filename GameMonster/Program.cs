@@ -1,8 +1,4 @@
-﻿using System;
-using System.Runtime.Remoting.Services;
-using System.Security;
-using System.Security.Cryptography;
-using TPjeu.Niveaux;
+﻿
 
 namespace TPjeu
 {
@@ -11,7 +7,7 @@ namespace TPjeu
     {
         public static void Main(string[] args)
         {
-            Menu.choixMode();
+            Menu.choixNiveaux();
         }
     }
 }

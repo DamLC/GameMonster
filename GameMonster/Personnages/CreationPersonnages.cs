@@ -1,228 +1,69 @@
 ﻿using System;
-using TPjeu.Classe;
+using TPjeu.Classes;
 using TPjeu.Personnages;
 
 namespace TPjeu
 {
     public class CreationPersonnages
     {
-        #region Creation PV, PA et Pdegats joueur et boss
-        public  static int creePV()
-               {
-                   int pv = 0;
-                   string rep ;
-                   
-                   while (pv == 0 || pv < 150)
-                   {
-                       Console.WriteLine("Saisissez le nombre de PV ");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           pv = Int32.Parse(rep);
-                           if (pv == 0)
-                           {
-                               Console.WriteLine("impossible de mettre 0 PV\n");
-                           }
-                           if (pv < 150)
-                           {
-                               Console.WriteLine("Vous devez mettre au minimum 150PV\n");
-                           }
-                       }
-                       catch (Exception )
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return pv;
-               }
-       
-               public static int creePA()
-               {
-                   int pa = 0;
-                   string rep ;
-                   
-                   while (pa == 0 )
-                   {
-                       Console.WriteLine("Saisissez les points de durabilité de l'armure");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           pa = Int32.Parse(rep);
-                           if (pa == 0)
-                           {
-                               Console.WriteLine("Une armure ne peut pas avoir 0 de durabilité\n");
-                           }
-                       }
-                       catch (Exception)
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return pa;
-               }
-       
-               public static int creeDegats()
-               {
-                   int deg = 0;
-                   string rep ;
-                               
-                   while (deg == 0 || deg >= 1000)
-                   {
-                       Console.WriteLine("Saisissez le nombre de degats d'arme");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           deg = Int32.Parse(rep);
-                           if (deg == 0)
-                           {
-                               Console.WriteLine("une arme ne peut pas faire 0 dégats\n");
-                           }
-       
-                           if (deg >= 1000)
-                           {
-                               Console.WriteLine("CHEATER !!! \n");
-                           }
-                       }
-                       catch (Exception)
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return deg;
-               }
-        #endregion
-
-        #region Creation PV, PA et Pdegats mec lambda
-                public  static int creePVLambda()
-               {
-                   int pv = 0;
-                   string rep ;
-                   
-                   while (pv == 0 || pv > 150)
-                   {
-                       Console.WriteLine("Saisissez le nombre de PV ");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           pv = Int32.Parse(rep);
-                           if (pv == 0)
-                           {
-                               Console.WriteLine("impossible de mettre 0 PV\n");
-                           }
-                           if (pv > 150)
-                           {
-                               Console.WriteLine("Vous ête de santé fragile, vous ne pouvez avoir plus de 150PV\n");
-                           }
-                       }
-                       catch (Exception )
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return pv;
-               }
-       
-               public static int creePALambda()
-               {
-                   int pa = 0;
-                   string rep ;
-                   
-                   while (pa == 0 || pa >15 )
-                   {
-                       Console.WriteLine("Saisissez les points de durabilité de l'armure");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           pa = Int32.Parse(rep);
-                           if (pa == 0)
-                           {
-                               Console.WriteLine("Une armure ne peut pas avoir 0 de durabilité\n");
-                           }
-                           if (pa > 15)
-                           {
-                               Console.WriteLine("Votre armure est toute abimé vous ne pouvez avoir plus de 15PA\n");
-                           }
-                       }
-                       catch (Exception)
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return pa;
-               }
-       
-               public static int creeDegatsLambda()
-               {
-                   int deg = 0;
-                   string rep ;
-                               
-                   while (deg == 0 || deg >= 10)
-                   {
-                       Console.WriteLine("Saisissez le nombre de degats d'arme");
-                       rep = Console.ReadLine();
-                       Console.WriteLine("\n");
-                       try
-                       {
-                           deg = Int32.Parse(rep);
-                           if (deg == 0)
-                           {
-                               Console.WriteLine("une arme ne peut pas faire 0 dégats\n");
-                           }
-       
-                           if (deg > 10)
-                           {
-                               Console.WriteLine("Votre épée est toute emoussé vous ne pouvez pas faire plus de 10 de dégats !!! \n");
-                           }
-                       }
-                       catch (Exception)
-                       {
-                           Console.WriteLine("ce n'est pas un nombre\n");
-                       }
-                   }
-                   return deg;
-               }
+        static Joueur hero; 
+         static Boss gontrand;
         
-
-        #endregion
-
-        #region potion
-
-        public static int potionPv()
+        public static Joueur creationHero()
         {
-            int pv = 0;
-            string rep ;
-                   
-            while (pv == 0 || pv > 50)
-            {
-                Console.WriteLine("Saisissez le nombre de PV de votre potion ");
-                rep = Console.ReadLine();
-                Console.WriteLine("\n");
-                try
-                {
-                    pv = Int32.Parse(rep);
-                    if (pv == 0)
-                    {
-                        Console.WriteLine("impossible de mettre 0 PV\n");
-                    }
-                    if (pv > 50)
-                    {
-                        Console.WriteLine("Nos alchimiste n'ont pas encore découvert une tel potion\n" +
-                                          "potion 50 PV maximum\n");
-                    }
-                }
-                catch (Exception )
-                {
-                    Console.WriteLine("ce n'est pas un nombre\n");
-                }
-            }
-            return pv;
+            string classe;
+            
+            Console.WriteLine("Choisissez votre classe :\n" +
+                                          "1 > Guerrier\n" +
+                                          "2 > Mage\n" +
+                                          "3 > Archer\n" +
+                                          "Attention toute autre reponse est à vos risques et périls");
+                        classe = Console.ReadLine();
+
+                        
+                        switch (classe)
+                        {
+                            case "1":
+                            {
+                                Console.WriteLine("Vous avez choisi guerriers votre arme sera donc l'épée\n");
+                                Titre.creationGuerrier();
+                                hero = new Guerrier(CreationCaracteristiquePersonnage.creePV(),CreationCaracteristiquePersonnage.creePA(),CreationCaracteristiquePersonnage.creeDegats(),CreationCaracteristiquePersonnage.potionPv());
+                                CreationCaracteristiquePersonnage.nom();
+                                return hero;
+                            }
+                            case "2":
+                            {
+                                Console.WriteLine("Vous avez choisi mages votre arme sera donc le baton\n");
+                                Titre.creationMage();
+                                hero = new Mage(CreationCaracteristiquePersonnage.creePV(),CreationCaracteristiquePersonnage.creePA(),CreationCaracteristiquePersonnage.creeDegats(),CreationCaracteristiquePersonnage.potionPv());
+                                CreationCaracteristiquePersonnage.nom();
+                                return hero;
+                            }
+                            case "3":
+                            {
+                                Console.WriteLine("Vous avez choisi archers votre arme sera donc l'arc\n");
+                                Titre.creationArcher();
+                                hero = new Archer(CreationCaracteristiquePersonnage.creePV(),CreationCaracteristiquePersonnage.creePA(),CreationCaracteristiquePersonnage.creeDegats(),CreationCaracteristiquePersonnage.potionPv());
+                                CreationCaracteristiquePersonnage.nom();
+                                return hero;
+                            }
+                            default:
+                            {
+                                Console.WriteLine("Vous avez choisi un hero banal sans compêtence particulière\n");
+                                Titre.creationJoueur();
+                                hero = new Joueur(CreationCaracteristiquePersonnage.creePVLambda(),CreationCaracteristiquePersonnage.creePALambda(), CreationCaracteristiquePersonnage.creeDegatsLambda());
+                                CreationCaracteristiquePersonnage.nom();
+                                return hero;
+                            }
+                        }      
         }
 
-        #endregion
+        public static Boss creationBoss()
+        {
+             Titre.creationBoss();
+              gontrand = new Boss(CreationCaracteristiquePersonnage.creePV(), CreationCaracteristiquePersonnage.creeDegats());
+             return gontrand;
+        }
+           
     }
 }

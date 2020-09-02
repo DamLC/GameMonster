@@ -22,127 +22,96 @@ namespace TPjeu
             Console.WriteLine("Joueur -> AH NON MAIS C'EST PAS VRAI JE VAIS ENCORE MOURRIR !! \n ");
         }
         
-         public static void effetDegatsJoueur(int degats)
+        public static void effetDegatsJoueur(int degats)
         {
-            switch (degats)
-            {
-                case 1:
+            
+                if(degats >=10 && degats <15)
                 {
-                    Console.WriteLine("Joueur -> Ca piquotte un peu mais ca va!"); 
-                    break;
+                    Console.WriteLine("Joueur -> Ca va piquer un peu  !"); 
+                    
                 }
-                case 2:
+                if(degats >=15 && degats <20)
                 {
                     Console.WriteLine("Joueur -> Ah! tu l'as pas volé celle la."); 
-                    break;
-                } case 3:
+                    
+                }
+                if(degats >=25 && degats <30)
                 {
                     Console.WriteLine("Joueur -> tiens, un petit coup de hache pour la route ."); 
-                    break;
-                } case 4:
+                    
+                }
+                if(degats >=35 && degats <40)
                 {
                     Console.WriteLine("Joueur -> Ah tu l'as senti passé celle la."); 
-                    break;
+                    
                 }
-                case 5:
+                if(degats >=40 && degats <45)
                 {
                     Console.WriteLine("Joueur -> Et BIM dans les dents."); 
-                    break;
-                } case 6:
+                    
+                }
+                if(degats >=45 && degats <50)
                 {
                     Console.WriteLine("Joueur -> Celui la il va faire mal. "); 
-                    break;
+                    
                 } 
-                case 7:
+                if(degats >=50 && degats <55)
                 {
                     Console.WriteLine("Joueur -> Ca piquotte un peu mais ca va!"); 
-                    break;
+                    
                 }
-                case 8:
+                if(degats >=55 && degats <60)
                 {
                     Console.WriteLine("Joueur -> Tiens! un coup de pied bien placé."); 
-                    break;
-                } case 9:
+                    
+                }
+                if(degats >=60 && degats <65)
                 {
                     Console.WriteLine("Joueur -> Arrete ou tu vas prendre une torgnolle. "); 
-                    break;
-                } case 10:
-                {
-                    Console.WriteLine("Joueur -> Ah tu l'as pas vu venir."); 
-                    break;
+                    
                 }
-                case 11:
-                {
-                    Console.WriteLine("Joueur -> Temps mort! Je fatigue la ....et tiens, t'es trop naîf^^."); 
-                    break;
-                } case 12:
-                {
-                    Console.WriteLine("Joueur -> ... "); 
-                    break;
-                } case 13:
-                {
-                    Console.WriteLine("Joueur -> Tu vas souffrir!"); 
-                    break;
-                }  case 14:
-                {
-                    Console.WriteLine("Joueur -> Un coup d'épée tu m'en diras des nouvelles."); 
-                    break;
-                }  case 15:
-                {
-                    Console.WriteLine("Joueur -> tiens, un petit coup de hache pour la route ."); 
-                    break;
-                } case 16:
-                {
-                    Console.WriteLine("Joueur -> Ah tu l'as senti passé celle la."); 
-                    break;
-                }
-                case 17:
-                {
-                    Console.WriteLine("Joueur -> Et BIM dans les dents."); 
-                    break;
-                } case 18:
-                {
-                    Console.WriteLine("Joueur -> Celui la il va faire mal ."); 
-                    break;
-                } 
-                case 19:
-                {
-                    Console.WriteLine("Joueur -> Ah ! mais c'est dégeulasse tu pisse le sang.!"); 
-                    break;
-                }
-                case 20:
+                if(degats >=65 && degats <70)
                 {
                     Console.WriteLine("Joueur -> Tiens! un coup de pied bien placé."); 
-                    break;
-                } case 21:
+                    
+                }
+                if(degats >=70 && degats <75)
                 {
                     Console.WriteLine("Joueur -> Arrete ou tu vas prendre une torgnolle. "); 
-                    break;
-                } case 22:
+                    
+                }
+                if(degats >=75 && degats <80)
                 {
                     Console.WriteLine("Joueur -> Ah tu l'as pas vu venir."); 
-                    break;
+                    
                 }
-                case 23:
+                if(degats >=80 && degats <85)
                 {
                     Console.WriteLine("Joueur -> Ah ! mais c'est dégeulasse tu pisse le sang."); 
-                    break;
-                } case 24:
+                    
+                }
+                if(degats >=85 && degats <90)
                 {
                     Console.WriteLine("Joueur -> ... "); 
-                    break;
-                } case 25:
+                    
+                }
+                if(degats >=90 && degats <95)
                 {
                     Console.WriteLine("Joueur -> Tu vas souffrir!"); 
-                    break;
-                }  case 26:
-                {
-                    Console.WriteLine("Joueur -> Un coup d'épée tu m'en diras des nouvelles."); 
-                    break;
+                    
                 }
-            }
-        
+                if(degats >=95 && degats <100)
+                {
+                    Console.WriteLine("Joueur -> Un coup d'épée tu m'en diras des nouvelles.");
+
+                }
+               
+                if(degats >100)
+                {
+                    Console.WriteLine("Joueur -> Ah ! mais c'est dégeulasse tu pisse le sang.!"); 
+                    
+                }
+            
         }
-        
     }
 }

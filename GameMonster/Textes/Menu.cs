@@ -4,12 +4,11 @@ namespace TPjeu
 {
     public class Menu
     {
-        public static void choixMode()
+        public static void choixNiveaux()
         {
             string rep = "";
 
-            Console.WriteLine("----------MENU-----------");
-
+            Titre.menu();
             while (rep != "1" || rep != "2" || rep != "3")
             {
                 Console.WriteLine("Choississez votre niveaux \n" +
@@ -39,6 +38,30 @@ namespace TPjeu
                 else
                 {
                     Console.WriteLine("Ce n'est pas ce qu'on ta demander '\n");
+                }
+            }
+        }
+        public static void RetourMenu()
+        {
+            var rep = "";
+            while (rep != "o" || rep != "n")
+            {
+                Console.WriteLine("Souhaitez vous retourner au choix des niveaux ? o/n");
+                rep = Console.ReadLine();
+                if (rep == "o")
+                {
+                    Narration.deuxiemeChance();
+                    Narration.enter();
+                    choixNiveaux();
+                }
+                if( rep == "n")
+                {
+                    Narration.fin();
+                    
+                }
+                else 
+                {
+                    Console.WriteLine("Ce n'est pas la bonne réponse");
                 }
             }
         }

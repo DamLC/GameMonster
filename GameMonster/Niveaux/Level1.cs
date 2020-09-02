@@ -68,11 +68,8 @@ namespace TPjeu.Niveaux
                               , cptFacile, cptDifficile, xp);
             Joueur.levelUp(xp);
             
-            Narration.fin();
             Narration.enter();
-            
-            Narration.deuxiemeChance();
-            Narration.enter();
+            Menu.RetourMenu();
         }
     }
 }

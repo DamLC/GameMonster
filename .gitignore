@@ -1,0 +1,23 @@
+HELP.md
+
+.sln
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### RIDER IDEA ###
+.csproj
+.idea
+.git
+bin/
+obj/
+
+
+
